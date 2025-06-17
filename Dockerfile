@@ -19,18 +19,11 @@ FROM openjdk:17
 WORKDIR /app
  
 # Copy the built jar file from the build stage
-<<<<<<< HEAD
-COPY --from=builder /app/target/*.war demo.war
-=======
-COPY --from=builder /app/target/*.jar demo.jar
->>>>>>> b5ba2ffc27777d2c115ee99d8d44a3daf8076b8d
+COPY --from=builder /app/target/*.war category-service.war
  
 # Expose the application port
 EXPOSE 9093:8080
  
 # Define the entrypoint to run the application
-<<<<<<< HEAD
-ENTRYPOINT ["java", "-jar", "demo.war"] 
-=======
-ENTRYPOINT ["java", "-jar", "demo.jar"]
->>>>>>> b5ba2ffc27777d2c115ee99d8d44a3daf8076b8d
+ENTRYPOINT ["java", "-jar", "category-service.war"] 
+
